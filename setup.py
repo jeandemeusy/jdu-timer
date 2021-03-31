@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name='timer_jdu',
-    version='0.1.2',
+    version='0.1.3',
     scripts=['timer_jdu'],
     author="Jean Demeusy",
     author_email="dev.jdu@gmail.com",
