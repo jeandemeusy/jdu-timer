@@ -5,19 +5,19 @@ with open("README.md", "r") as fh:
 
 
 setuptools.setup(
-    name='dokr',
-    version='0.1',
-    scripts=['dokr'],
-    author="Deepak Kumar",
-    author_email="deepak.kumar.iet@gmail.com",
-    description="A Docker and AWS utility package",
+    name='timer-jdu',
+    version='0.1.1',
+    scripts=['timer-jdu'],
+    author="Jean Demeusy",
+    author_email="dev.jdu@gmail.com",
+    description="A usefull timer package to measure and pack functions' execution time.",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/javatechy/dokr",
+    url="https://github.com/jeandemeusy/timR-pfg",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
-         "License :: OSI Approved :: MIT License",
-         "Operating System :: OS Independent",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",
     ],
 )
