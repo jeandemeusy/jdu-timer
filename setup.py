@@ -5,15 +5,15 @@ with open("README.md", "r") as fh:
 
 
 setuptools.setup(
-    name='timer_jdu',
-    version='0.1.3',
-    scripts=['timer_jdu'],
+    name='jdu_timer',
+    version='0.1',
+    scripts=['jdu_timer'],
     author="Jean Demeusy",
     author_email="dev.jdu@gmail.com",
     description="A usefull timer package to measure and pack functions' execution time.",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/jeandemeusy/timer-jdu-pkg",
+    url="https://github.com/jeandemeusy/jdu_timer",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
