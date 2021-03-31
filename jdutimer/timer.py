@@ -1,5 +1,5 @@
 import time
-from display import color, warning, info, error
+from jdutimer.display import color, warning, info, error
 
 
 class Singleton(type):
