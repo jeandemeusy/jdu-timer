@@ -2,7 +2,7 @@ import time
 from jdutimer.display import color, warning, info, error
 
 
-class __Singleton(type):
+class Singleton(type):
     """
     Singleton class to inherit from to create a new singleton.
     """
@@ -11,11 +11,11 @@ class __Singleton(type):
     def __call__(cls, *args, **kwargs):
         if cls not in cls._instances:
             cls._instances[cls] = super(
-                __Singleton, cls).__call__(*args, **kwargs)
+                Singleton, cls).__call__(*args, **kwargs)
         return cls._instances[cls]
 
 
-class Timer(metaclass=__Singleton):
+class Timer(metaclass=Singleton):
     """
     Class made to measure execution time easily, and get a summary of all measurements.
     """
