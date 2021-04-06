@@ -1,4 +1,4 @@
-# jdu-timer
+# jdutimer
  
 Singleton implementation of a timer. This package allows you to measure and summarize executions time.
 
