@@ -9,7 +9,7 @@ Singleton implementation of a timer. This package allows you to measure and summ
 > pip(3) install (-U) jdutimer
 ```
 
-## Methods
+## Methods
 
 ``` python
 def add(self, func, *args)
