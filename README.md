@@ -10,6 +10,7 @@ Singleton implementation of a timer. This package allows you to measure and summ
 ```
 
 ## Methods
+
 ``` python
 def add(self, func, *args)
 ```
@@ -37,6 +38,7 @@ def rename(self, old, new)
 
 
 ## Example usage
+
 This snippet :
 ``` python
 from jdutimer.timer import Timer
