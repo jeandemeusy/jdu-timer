@@ -47,7 +47,6 @@ def foo(str):
 def bar(num):
     print(num)
 
-
 timer = Timer()
 timer.add(foo, "Hello World!")
 timer.add(bar, 42)
