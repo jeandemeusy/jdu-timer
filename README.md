@@ -1,4 +1,4 @@
-# timer-python
+# jdu-timer
  
 Singleton implementation of a timer. This package allows you to measure and summarize executions time.
 
