@@ -5,9 +5,9 @@ with open("README.md", "r") as fh:
 
 
 setuptools.setup(
-    name='jdutimer',
-    version='0.2.1',
-    scripts=['bin/jdutimer'],
+    name="jdutimer",
+    version="0.2.4",
+    scripts=["bin/jdutimer"],
     author="Jean Demeusy",
     author_email="dev.jdu@gmail.com",
     description="A usefull timer package to measure and pack functions' execution time.",
