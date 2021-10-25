@@ -1,17 +1,17 @@
 import time
-from jdutimer.display import color, warning, info, error
+from jdutimer.display import color, warning, error
 
 
 class Singleton(type):
     """
     Singleton class to inherit from to create a new singleton.
     """
+
     _instances = {}
 
     def __call__(cls, *args, **kwargs):
         if cls not in cls._instances:
-            cls._instances[cls] = super(
-                Singleton, cls).__call__(*args, **kwargs)
+            cls._instances[cls] = super(Singleton, cls).__call__(*args, **kwargs)
         return cls._instances[cls]
 
 
@@ -25,9 +25,9 @@ class Timer(metaclass=Singleton):
         Initialisation class for timer.
         """
 
-        self.funcs = []         # list of block functions
-        self.titles = []        # list of block titles
-        self.__subfuncs = []    # current block functions
+        self.funcs = []  # list of block functions
+        self.titles = []  # list of block titles
+        self.__subfuncs = []  # current block functions
         self.__blocktimes = []  # list of total block time in ms
 
     def add(self, func, *args):
@@ -85,16 +85,25 @@ class Timer(metaclass=Singleton):
             for func, time in b_func:
                 self.__print(" ", func, time, l_title, l_func, unit)
 
-            self.__print("", " ", self.__blocktimes[i],
-                         l_title, l_func, unit, tag=color.GREEN)
+            self.__print(
+                "", " ", self.__blocktimes[i], l_title, l_func, unit, tag=color.GREEN
+            )
 
-        self.__print("", '-' * l_func, 0, l_title, l_func, unit)
-        self.__print("", "TOTAL", sum(self.__blocktimes),
-                     l_title, l_func, unit, color.BOLD + color.GREEN)
+        self.__print("", "-" * l_func, 0, l_title, l_func, unit)
+        self.__print(
+            "",
+            "TOTAL",
+            sum(self.__blocktimes),
+            l_title,
+            l_func,
+            unit,
+            color.BOLD + color.GREEN,
+        )
 
         if len(self.__subfuncs) != 0:
             warning(
-                f"\nsome timed functions are not packed yet.\nCall {self.__name()}().pack() to stack them.")
+                f"\nsome timed functions are not packed yet.\nCall {self.__name()}().pack() to stack them."
+            )
             self.__print("UNPACKED", "", 0, l_title, 0, unit, color.BOLD)
 
             for func, time in self.__subfuncs:
@@ -141,6 +150,10 @@ class Timer(metaclass=Singleton):
                 time *= 10
             if unit == "s":
                 time *= 1
+            if unit == "min":
+                time /= 60
+            if unit == "h":
+                time /= 3600
 
             string = string + " " * 3 + f"{time:7.2f}{unit}"
 
@@ -175,6 +188,8 @@ class Timer(metaclass=Singleton):
         """
         Get the length of the longest function.
         """
+        if len(self.titles) == 0:
+            return 0
 
         return len(max(self.titles, key=len))
 
@@ -184,10 +199,9 @@ class Timer(metaclass=Singleton):
         """
 
         strings = []
-        strings.append(
-            f"{self.__name()} class with {len(self.titles)} blocks packed:")
+        strings.append(f"{self.__name()} class with {len(self.titles)} blocks packed:")
 
         for b_func, title in self.__summary():
             strings.append(f"\t- {title} ({', '.join(b_func[0])})")
 
-        return '\n'.join(strings)
+        return "\n".join(strings)
