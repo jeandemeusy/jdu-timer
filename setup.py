@@ -13,7 +13,7 @@ setuptools.setup(
     description="A usefull timer package to measure and pack functions' execution time.",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/jeandemeusy/jdu_timer",
+    url="https://github.com/jeandemeusy/jdu-timer",
     packages=["jdutimer"],
     classifiers=[
         "Programming Language :: Python :: 3",
